@@ -1,5 +1,12 @@
 section.text:
-	global _ft_strlen
+	global ft_strlen
 
-_ft_strlen:
+ft_strlen:
+	mov rcx, 0
+	while1:		cmp byte [rdi + rcx], 0x0
+					je endwhile1
+				inc rcx
+				jmp while1
+	endwhile1:
+	mov rax, rcx
 	ret

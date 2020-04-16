@@ -1,0 +1,13 @@
+db 8 bits
+dw 16 bits
+dd 32 bits
+dq 64 bits
+dt 80 bits
+
+
+
+
+## ERROR :
+/usr/bin/ld: libasm.a(ft_strlen.o): relocation R_X86_64_32 against `.text' can not be used when making a PIE object; recompilez avec -fPIC
+## SOLUTION :
+oublié de mettre ":" apres section.text:

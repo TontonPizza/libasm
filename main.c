@@ -17,11 +17,21 @@
 
 extern int errno ;
 
-int _ft_strlen(char *s);
+int ft_strlen(char *s);
+char *ft_strcpy(char *dest, char *src);
 
 int main (int argc, char **argv)
 {
-	printf("len = %d\n", _ft_strlen("salut"));
+
+	char *dest = strdup("salut");
+
+	char *a = ft_strcpy(dest, dest);
+
+
+	printf("%s\n", a);
+	printf("%li\n %li\n", sizeof(char*), sizeof(char));
+
+
 	return (0);
 }
 
