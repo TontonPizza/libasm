@@ -4,7 +4,7 @@ dd 32 bits
 dq 64 bits
 dt 80 bits
 
-
+tutorialspoint.com/assembly_programming/
 
 
 ## ERROR :
