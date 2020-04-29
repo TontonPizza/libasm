@@ -2,7 +2,6 @@ section.text:
 	global ft_strcmp
 
 ft_strcmp:
-	push rcx
 	mov rcx, 0x0
 	compare:
 		mov byte dl, [rdi + rcx]
@@ -15,13 +14,10 @@ ft_strcmp:
 			jmp compare
 	positive:
 		mov rax, 1
-		pop rcx
 		ret
 	negative:
 		mov rax, -1
-		pop rcx
 		ret
 	zero:
 		mov rax, 0
-		pop rcx
 		ret

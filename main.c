@@ -10,9 +10,11 @@ int		ft_strcmp(char *a, char *b);
 
 int main (int argc, char **argv)
 {
-	int a = ft_strcmp("bx", "bx");
 
-	int b = strcmp("bx", "bx");
+
+	int a = ft_strcmp("bxa", "bxaa");
+
+	int b = strcmp("bxa", "bxaa");
 
 
 	printf("officiel : %d\n personnel %d\n", b, a);
