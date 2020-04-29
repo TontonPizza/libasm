@@ -6,7 +6,7 @@ NAME = libasm.a
 
 NASM = nasm -f elf64
 
-FLAG = -lc -include /usr/include/errno.h -no-pie -fsanitize=address
+FLAG = -lc -include /usr/include/errno.h -no-pie
 
 ####### Objects			#######
 
@@ -41,6 +41,7 @@ ft_strcmp.o : $(SRCS)ft_strcmp.s
 
 exec : all
 		gcc  $(FLAG) main.c $(NAME)
+		make clean
 		./a.out
 
 all : $(NAME)

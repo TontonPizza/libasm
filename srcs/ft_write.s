@@ -1,10 +1,19 @@
 section.text:
 	global ft_write
-	extern error
+	extern ___error
 ; rdi rsi rdx arg 1 2 3
 ft_write:
 	mov rax, 1
 	syscall
-	; si rax est négatif, -rax est le code d'erreur
-	; si rax est positif, le code d'erreur est zero²
+	mov rdi, rax
+	cmp rax, 0x0
+	jnge error_handler
+	ret
+error_handler:
+	push rbp
+	push rax
+	call ___error
+	pop rax
+	pop rbp
+	mov rax, -1
 	ret
