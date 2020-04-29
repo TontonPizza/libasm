@@ -6,14 +6,16 @@ NAME = libasm.a
 
 NASM = nasm -f elf64
 
-FLAG =
+FLAG = -lc -include /usr/include/errno.h -no-pie -fsanitize=address
 
 ####### Objects			#######
 
 SRCS = srcs/
 
 OBJS =	ft_strlen.o \
-		ft_strcpy.o
+		ft_strcpy.o \
+		ft_write.o  \
+		ft_strcmp.o
 
 
 ft_strlen.o : $(SRCS)ft_strlen.s
@@ -22,6 +24,11 @@ ft_strlen.o : $(SRCS)ft_strlen.s
 ft_strcpy.o : $(SRCS)ft_strcpy.s
 			$(NASM) $< -o $@
 
+ft_write.o : $(SRCS)ft_write.s
+			$(NASM) $< -o $@
+
+ft_strcmp.o : $(SRCS)ft_strcmp.s
+			$(NASM) $< -o $@
 
 ####### Mandatory rules #######
 
