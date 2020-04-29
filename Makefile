@@ -15,8 +15,15 @@ SRCS = srcs/
 OBJS =	ft_strlen.o \
 		ft_strcpy.o \
 		ft_write.o  \
-		ft_strcmp.o
+		ft_strcmp.o \
+		ft_strdup.o \
+		ft_read.o	\
 
+ft_read.o : $(SRCS)ft_read.s
+			$(NASM) $< -o $@
+
+ft_strdup.o : $(SRCS)ft_strdup.s
+			$(NASM) $< -o $@
 
 ft_strlen.o : $(SRCS)ft_strlen.s
 			$(NASM) $< -o $@

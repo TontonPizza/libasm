@@ -5,6 +5,6 @@ section.text:
 ft_write:
 	mov rax, 1
 	syscall
-	mov eax, 1
-	call error
+	; si rax est négatif, -rax est le code d'erreur
+	; si rax est positif, le code d'erreur est zero²
 	ret
