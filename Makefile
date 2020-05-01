@@ -6,7 +6,7 @@ NAME = libasm.a
 
 NASM = nasm -f elf64
 
-FLAG = -lc -include /usr/include/errno.h -no-pie
+FLAG = -lc -include /usr/include/errno.h -no-pie -fsanitize=address
 
 ####### Objects			#######
 

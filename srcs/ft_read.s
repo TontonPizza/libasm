@@ -12,6 +12,7 @@ ft_read:
 error_handler:
 	push rbp
 	push rax
+	imul rdi, -1
 	call ___error
 	pop rax
 	pop rbp

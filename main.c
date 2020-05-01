@@ -16,7 +16,7 @@ int		ft_read(int fd, char *buffer, int size);
 
 extern int *___error(int res)
 {
-	errno = -res;
+	errno = res;
 	return 0;
 }
 
@@ -41,7 +41,7 @@ void	test_strcpy(char *src)
 	int i = ft_strlen(src);
 	char *d = malloc(sizeof(char) * i);
 	d = ft_strcpy(d, src);
-	printf("dest : %s", d);
+	write(1, d, i);
 	free(d);
 }
 
@@ -61,13 +61,13 @@ void	test_write()
 	errno = 0;
 	int r = ft_write(1, "salut\n", 6);
 	printf("\n%s : errno = %d\n", strerror(errno), errno);
-	printf("\nreturn value : %d", r);
+	printf("return value : %d\n", r);
 	r =ft_write(-1, "toto", 4);
 	printf("\n%s : errno = %d\n", strerror(errno), errno);
-	printf("\nreturn value : %d", r);
+	printf("return value : %d\n", r);
 	r = ft_write(1, 0, 1);
 	printf("\n%s : errno = %d\n", strerror(errno), errno);
-	printf("\nreturn value : %d", r);
+	printf("return value : %d\n", r);
 
 }
 
